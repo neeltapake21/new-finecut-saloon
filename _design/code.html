@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>New Fine Cut Saloon</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&amp;family=Libre+Caslon+Text:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "secondary-fixed": "#e2e2e2",
+                        "background": "#131313",
+                        "surface-bright": "#3a3939",
+                        "secondary-fixed-dim": "#c6c6c6",
+                        "on-secondary": "#2f3131",
+                        "tertiary": "#d0cdcd",
+                        "inverse-primary": "#735c00",
+                        "surface-container-lowest": "#0e0e0e",
+                        "on-tertiary-container": "#454544",
+                        "on-primary-fixed": "#241a00",
+                        "on-primary": "#3c2f00",
+                        "on-error-container": "#ffdad6",
+                        "on-secondary-container": "#b5b5b5",
+                        "on-tertiary-fixed": "#1c1b1b",
+                        "surface-dim": "#131313",
+                        "on-primary-container": "#554300",
+                        "tertiary-fixed": "#e5e2e1",
+                        "error-container": "#93000a",
+                        "inverse-surface": "#e5e2e1",
+                        "surface": "#131313",
+                        "error": "#ffb4ab",
+                        "on-primary-fixed-variant": "#574500",
+                        "on-secondary-fixed": "#1a1c1c",
+                        "surface-container-low": "#1c1b1b",
+                        "secondary": "#c6c6c6",
+                        "on-background": "#e5e2e1",
+                        "surface-container": "#201f1f",
+                        "tertiary-fixed-dim": "#c8c6c5",
+                        "outline-variant": "#4d4635",
+                        "surface-container-highest": "#353534",
+                        "surface-container-high": "#2a2a2a",
+                        "on-error": "#690005",
+                        "on-secondary-fixed-variant": "#454747",
+                        "secondary-container": "#454747",
+                        "on-tertiary": "#313030",
+                        "outline": "#99907c",
+                        "primary-container": "#d4af37",
+                        "on-tertiary-fixed-variant": "#474746",
+                        "surface-variant": "#353534",
+                        "primary-fixed": "#ffe088",
+                        "primary": "#f2ca50",
+                        "on-surface-variant": "#d0c5af",
+                        "inverse-on-surface": "#313030",
+                        "tertiary-container": "#b4b2b2",
+                        "on-surface": "#e5e2e1",
+                        "surface-tint": "#e9c349",
+                        "primary-fixed-dim": "#e9c349"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    spacing: {
+                        "unit": "8px",
+                        "section-padding-mobile": "64px",
+                        "container-max": "1200px",
+                        "gutter": "32px",
+                        "section-padding-desktop": "120px"
+                    },
+                    fontFamily: {
+                        "label-md": ["Hanken Grotesk"],
+                        "body-lg": ["Hanken Grotesk"],
+                        "body-md": ["Hanken Grotesk"],
+                        "headline-lg-mobile": ["Libre Caslon Text"],
+                        "headline-md": ["Libre Caslon Text"],
+                        "display-lg": ["Libre Caslon Text"],
+                        "label-sm": ["Hanken Grotesk"],
+                        "headline-lg": ["Libre Caslon Text"]
+                    },
+                    fontSize: {
+                        "label-md": ["14px", { "lineHeight": "1.2", "letterSpacing": "0.1em", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-lg-mobile": ["32px", { "lineHeight": "1.2", "fontWeight": "400" }],
+                        "headline-md": ["28px", { "lineHeight": "1.3", "fontWeight": "400" }],
+                        "display-lg": ["64px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "400" }],
+                        "label-sm": ["12px", { "lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "headline-lg": ["40px", { "lineHeight": "1.2", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 200, 'GRAD' 0, 'opsz' 24;
+        }
+        .icon-fill {
+            font-variation-settings: 'FILL' 1, 'wght' 200, 'GRAD' 0, 'opsz' 24;
+        }
+        .signature-divider {
+            width: 1px;
+            height: 40px;
+            background-color: theme('colors.primary');
+            margin: 0 auto 24px auto;
+        }
+        .section-divider {
+            height: 1px;
+            width: 100%;
+            background: linear-gradient(to right, transparent, theme('colors.primary'), transparent);
+            opacity: 0.3;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md antialiased min-h-screen flex flex-col">
+<!-- TopNavBar -->
+<nav class="bg-background dark:bg-background text-primary dark:text-primary fixed top-0 left-0 w-full z-50 border-b border-primary/20 flat no shadows">
+<div class="flex justify-between items-center px-gutter py-6 max-w-container-max mx-auto">
+<div class="font-headline-md text-headline-md text-primary tracking-tight uppercase">New Fine Cut Saloon</div>
+<ul class="hidden md:flex space-x-8 items-center">
+<li><a class="text-on-surface hover:text-primary transition-colors font-label-md hover:text-primary transition-all duration-300 ease-in-out" href="#">Home</a></li>
+<li><a class="text-on-surface hover:text-primary transition-colors font-label-md hover:text-primary transition-all duration-300 ease-in-out" href="#about">About</a></li>
+<li><a class="text-on-surface hover:text-primary transition-colors font-label-md hover:text-primary transition-all duration-300 ease-in-out" href="#services">Services</a></li>
+<li><a class="text-on-surface hover:text-primary transition-colors font-label-md hover:text-primary transition-all duration-300 ease-in-out" href="#contact">Contact</a></li>
+</ul>
+<a class="hidden md:inline-block bg-primary text-on-primary font-label-md px-6 py-3 uppercase tracking-widest hover:bg-primary-fixed transition-colors" href="#contact">Book Appointment</a>
+</div>
+</nav>
+<main class="flex-grow pt-[100px]">
+<!-- Hero Section -->
+<section class="relative min-h-[819px] flex items-center justify-center px-gutter py-section-padding-mobile md:py-section-padding-desktop bg-surface-container-lowest bg-cover bg-center bg-no-repeat" data-alt="A cinematic, high-contrast shot of a master barber carefully trimming a client's beard in a dimly lit, high-end vintage barbershop. The scene uses moody obsidian shadows pierced by warm, focused spotlighting, creating a luxurious and masculine atmosphere. Subtle golden reflections glint off the polished steel scissors and razor. The aesthetic is strictly premium and minimal." style="background-image: linear-gradient(rgba(19, 19, 19, 0.8), rgba(19, 19, 19, 0.9)), url('https://lh3.googleusercontent.com/aida-public/AB6AXuAS2JP91EzuTAiOYXzhE3_F8tvXCiXVYC5iBNJt-FgMfug0q3KX6v1qUx_snkbXTYV7fa0Qbhxcivop-KZVhynkcycAgnsz516WjP-ne9EAi-qTMzEYBVk-PiVUZnDCC86b87gCW1qA0JYW2w28OX5dqD84IBeMtfG0rGmn3zxSTUYfKssZn7zeKeZuAGQPRbFTtg2qIkA-MOMcNuLBGLKItnp3jGuyd3V0dSXuTgKNNvx4LKBcSJ_8XonIOLSSoCfb2KF0xLv5g7dj');">
+<div class="max-w-container-max mx-auto text-center z-10 w-full md:w-8/12">
+<h1 class="font-display-lg text-display-lg text-primary uppercase mb-8 tracking-widest">Look Sharp.<br/>Feel Confident.</h1>
+<p class="font-body-lg text-body-lg text-secondary-fixed-dim mb-12 max-w-2xl mx-auto">Modern grooming for modern gentlemen. Walk in looking good, walk out feeling unstoppable.</p>
+<div class="flex flex-col sm:flex-row gap-6 justify-center items-center">
+<a class="bg-primary text-on-primary font-bold px-10 py-5 text-[15px] uppercase tracking-[0.15em] shadow-[0_0_15px_rgba(242,202,80,0.25)] hover:shadow-[0_0_25px_rgba(242,202,80,0.4)] hover:bg-primary-fixed transition-all duration-300 transform hover:scale-[1.02]" href="#contact">Book Your Cut</a>
+<a class="border border-primary text-primary font-label-md px-8 py-4 uppercase tracking-widest hover:bg-primary/10 transition-colors" href="#services">See Services</a>
+</div>
+</div>
+</section>
+<div class="section-divider"></div>
+<!-- About Us Section -->
+<section class="px-gutter py-section-padding-mobile md:py-section-padding-desktop max-w-container-max mx-auto" id="about">
+<div class="flex flex-col md:flex-row gap-16 items-center">
+<div class="md:w-1/2">
+<div class="signature-divider ml-0"></div>
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface uppercase tracking-widest mb-8">A Legacy of<br/>Excellence</h2>
+<p class="font-body-lg text-body-lg text-secondary-fixed-dim mb-6">Founded on the principles of classic barbering, New Fine Cut Saloon brings traditional techniques into the modern era. We believe that a haircut is not just a service, but an experience—a moment of refined relaxation for the modern gentleman.</p>
+<p class="font-body-lg text-body-lg text-secondary-fixed-dim">Our master barbers are artisans of their craft, dedicated to precision, attention to detail, and a commitment to ensuring every client walks out feeling their absolute best. Step into our sanctuary and discover the art of true grooming.</p>
+</div>
+<div class="md:w-1/2 w-full h-[500px] bg-surface-container-highest border border-outline-variant/20 flex items-center justify-center bg-cover bg-center" style="background-image: linear-gradient(rgba(19, 19, 19, 0.3), rgba(19, 19, 19, 0.7)), url('https://lh3.googleusercontent.com/aida-public/AB6AXuCdkQJTjxJuvTsBZOg5XBO1j_fYDyT4CePIqXf2CmAi8AMR27LvRtPgSdHWuPuTPrQXq14kfNBC4oEfDgzKAgTgnfSGSDBX0EBz4fU6SealuYZaYaKfo9mp3nrSHFZOScIpD0JGnstdNSuikc7e0Kj3IjGNphPYRwZBej5F1AaJzC1giWFgsEu21UxKkWKGYMRHB62_vG2zTW3eQW9Y-sgBwH1fzSKpUT-_zomQWtuHAb1TUgJ5I9JB_Fq06dZhR-rXYo5qmWlaPIAO');">
+<!-- Subtle placeholder image styling -->
+</div>
+</div>
+</section>
+<div class="section-divider"></div>
+<!-- Services Section -->
+<section class="px-gutter py-section-padding-mobile md:py-section-padding-desktop max-w-container-max mx-auto" id="services">
+<div class="text-center mb-16">
+<div class="signature-divider"></div>
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface uppercase tracking-widest mb-4">Our Services</h2>
+<p class="font-body-md text-body-md text-secondary-fixed-dim">Precision and care in every detail.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-x-24 gap-y-12 max-w-4xl mx-auto">
+<!-- Service Group 1 -->
+<div>
+<h3 class="font-headline-md text-headline-md text-primary mb-8 border-b border-outline-variant/30 pb-2 uppercase tracking-wide">Hair</h3>
+<ul class="space-y-6">
+<li class="flex justify-between items-baseline">
+<span class="font-headline-md text-headline-md text-on-surface">Precision Haircut</span>
+<div class="flex-grow border-b border-dotted border-outline-variant/50 mx-4"></div>
+<span class="font-label-md text-label-md text-secondary-fixed">Ask</span>
+</li>
+<li class="flex justify-between items-baseline">
+<span class="font-headline-md text-headline-md text-on-surface">Fade Cut</span>
+<div class="flex-grow border-b border-dotted border-outline-variant/50 mx-4"></div>
+<span class="font-label-md text-label-md text-secondary-fixed">Ask</span>
+</li>
+<li class="flex justify-between items-baseline">
+<span class="font-headline-md text-headline-md text-on-surface">Hair Treatments</span>
+<div class="flex-grow border-b border-dotted border-outline-variant/50 mx-4"></div>
+<span class="font-label-md text-label-md text-secondary-fixed">Ask</span>
+</li>
+</ul>
+</div>
+<!-- Service Group 2 -->
+<div>
+<h3 class="font-headline-md text-headline-md text-primary mb-8 border-b border-outline-variant/30 pb-2 uppercase tracking-wide">Grooming</h3>
+<ul class="space-y-6">
+<li class="flex justify-between items-baseline">
+<span class="font-headline-md text-headline-md text-on-surface">Straight Razor Shave</span>
+<div class="flex-grow border-b border-dotted border-outline-variant/50 mx-4"></div>
+<span class="font-label-md text-label-md text-secondary-fixed">Ask</span>
+</li>
+<li class="flex justify-between items-baseline">
+<span class="font-headline-md text-headline-md text-on-surface">Beard Trim &amp; Shape</span>
+<div class="flex-grow border-b border-dotted border-outline-variant/50 mx-4"></div>
+<span class="font-label-md text-label-md text-secondary-fixed">Ask</span>
+</li>
+<li class="flex justify-between items-baseline">
+<span class="font-headline-md text-headline-md text-on-surface">Groom Packages</span>
+<div class="flex-grow border-b border-dotted border-outline-variant/50 mx-4"></div>
+<span class="font-label-md text-label-md text-secondary-fixed">Ask</span>
+</li>
+</ul>
+</div>
+</div>
+</section>
+<div class="section-divider"></div>
+<!-- Client Praise Section -->
+<section class="px-gutter py-section-padding-mobile md:py-section-padding-desktop bg-surface-container-lowest" id="reviews">
+<div class="max-w-container-max mx-auto">
+<div class="text-center mb-16">
+<div class="signature-divider"></div>
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface uppercase tracking-widest mb-4">Client Praise</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<!-- Review 1 -->
+<div class="bg-surface p-10 border border-outline-variant/10 flex flex-col justify-between">
+<div>
+<div class="flex text-primary mb-6">
+<span class="material-symbols-outlined icon-fill">star</span><span class="material-symbols-outlined icon-fill">star</span><span class="material-symbols-outlined icon-fill">star</span><span class="material-symbols-outlined icon-fill">star</span><span class="material-symbols-outlined icon-fill">star</span>
+</div>
+<p class="font-body-lg text-body-lg text-on-surface mb-8 italic">"Best salon in Town. Best experience"</p>
+</div>
+<div>
+<p class="font-label-md text-label-md text-secondary-fixed uppercase tracking-wider">Zeeshan</p>
+</div>
+</div>
+<!-- Review 2 -->
+<div class="bg-surface p-10 border border-outline-variant/10 flex flex-col justify-between">
+<div>
+<div class="flex text-primary mb-6">
+<span class="material-symbols-outlined icon-fill">star</span><span class="material-symbols-outlined icon-fill">star</span><span class="material-symbols-outlined icon-fill">star</span><span class="material-symbols-outlined icon-fill">star</span><span class="material-symbols-outlined icon-fill">star</span>
+</div>
+<p class="font-body-lg text-body-lg text-on-surface mb-8 italic">"Excellent and Fully satisfying haircut."</p>
+</div>
+<div>
+<p class="font-label-md text-label-md text-secondary-fixed uppercase tracking-wider">Fozail khan</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<div class="section-divider"></div>
+<!-- Contact & Booking Section -->
+<section class="flex flex-col" id="contact">
+<div class="px-gutter py-section-padding-mobile md:py-section-padding-desktop max-w-container-max mx-auto w-full">
+<div class="text-center mb-16">
+<div class="signature-divider"></div>
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface uppercase tracking-widest mb-4">Contact &amp; Booking</h2>
+<p class="font-body-md text-body-md text-secondary-fixed-dim">Secure your appointment and find our sanctuary.</p>
+</div>
+<div class="flex flex-col md:flex-row gap-16">
+<div class="md:w-5/12 flex flex-col justify-center">
+<h3 class="font-headline-md text-headline-md text-on-surface uppercase tracking-widest mb-6">Reserve Your Chair</h3>
+<p class="font-body-lg text-body-lg text-secondary-fixed-dim mb-8">We value your time and precision. Book ahead to ensure your preferred slot.</p>
+<div class="space-y-6 pt-8 mt-8 border-t border-outline-variant/20">
+<p class="font-body-md text-body-md text-on-surface flex items-center gap-4"><span class="material-symbols-outlined text-primary">location_on</span> HWR4+VQR, Kalwad, Lohegaon, Pune</p>
+<p class="font-body-md text-body-md text-on-surface flex items-center gap-4"><span class="material-symbols-outlined text-primary">call</span> 08999624893</p>
+<p class="font-body-md text-body-md text-on-surface flex items-center gap-4"><span class="material-symbols-outlined text-primary">schedule</span> Open Daily: 9:00 AM - 9:00 PM</p>
+</div>
+</div>
+<div class="md:w-7/12 bg-surface p-10 border border-outline-variant/10">
+<form class="space-y-8">
+<div>
+<label class="block font-label-sm text-label-sm text-secondary-fixed uppercase tracking-widest mb-2" for="name">Full Name</label>
+<input class="w-full bg-transparent border-0 border-b border-secondary-fixed-dim focus:border-primary focus:ring-0 text-on-surface font-body-lg px-0 py-2 transition-colors" id="name" placeholder="Enter your name" type="text"/>
+</div>
+<div>
+<label class="block font-label-sm text-label-sm text-secondary-fixed uppercase tracking-widest mb-2" for="service">Service</label>
+<select class="w-full bg-transparent border-0 border-b border-secondary-fixed-dim focus:border-primary focus:ring-0 text-on-surface font-body-lg px-0 py-2 transition-colors" id="service">
+<option class="bg-surface" value="">Select a service</option>
+<option class="bg-surface" value="haircut">Precision Haircut</option>
+<option class="bg-surface" value="shave">Straight Razor Shave</option>
+<option class="bg-surface" value="package">Groom Package</option>
+</select>
+</div>
+<div class="grid grid-cols-2 gap-8">
+<div>
+<label class="block font-label-sm text-label-sm text-secondary-fixed uppercase tracking-widest mb-2" for="date">Date</label>
+<input class="w-full bg-transparent border-0 border-b border-secondary-fixed-dim focus:border-primary focus:ring-0 text-on-surface font-body-lg px-0 py-2 transition-colors dark:[color-scheme:dark]" id="date" type="date"/>
+</div>
+<div>
+<label class="block font-label-sm text-label-sm text-secondary-fixed uppercase tracking-widest mb-2" for="time">Time</label>
+<input class="w-full bg-transparent border-0 border-b border-secondary-fixed-dim focus:border-primary focus:ring-0 text-on-surface font-body-lg px-0 py-2 transition-colors dark:[color-scheme:dark]" id="time" type="time"/>
+</div>
+</div>
+<button class="w-full bg-primary text-on-primary font-label-md px-8 py-4 uppercase tracking-widest hover:bg-primary-fixed transition-colors mt-8 flex justify-center items-center gap-2" type="button">
+<span class="material-symbols-outlined">send</span> Book via WhatsApp
+                    </button>
+</form>
+</div>
+</div>
+</div>
+<!-- Map Section Integrated -->
+<div class="h-96 w-full grayscale opacity-70 hover:opacity-100 transition-opacity duration-500 bg-surface-container-highest flex items-center justify-center border-y border-outline-variant/20 mt-16" data-location="Pune">
+<span class="text-secondary-fixed-dim font-label-md uppercase tracking-widest"><span class="material-symbols-outlined mr-2 align-middle">map</span> Map View: Kalwad, Lohegaon, Pune</span>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-background dark:bg-background text-primary dark:text-primary w-full py-section-padding-desktop border-t border-primary/20 flat no shadows">
+<div class="flex flex-col md:flex-row justify-between items-start px-gutter max-w-container-max mx-auto gap-gutter">
+<div class="md:w-1/3">
+<div class="font-headline-md text-headline-md text-primary uppercase mb-6">New Fine Cut Saloon</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant mb-2 hover:text-primary transition-all duration-300">HWR4+VQR, Kalwad, Lohegaon, Pune</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant mb-6 hover:text-primary transition-all duration-300">08999624893</p>
+<div class="flex space-x-4">
+<a class="text-on-surface-variant hover:text-primary transition-all duration-300" href="#"><span class="material-symbols-outlined">photo_camera</span></a>
+<a class="text-on-surface-variant hover:text-primary transition-all duration-300" href="#"><span class="material-symbols-outlined">thumb_up</span></a>
+</div>
+</div>
+<div class="md:w-2/3 flex flex-col md:items-end justify-between h-full">
+<div class="flex flex-wrap gap-8 mb-12 md:mb-0">
+<!-- Additional links could go here if needed -->
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">© 2024 New Fine Cut Saloon. Precision Grooming.</p>
+</div>
+</div>
+</footer>
+</body></html>
